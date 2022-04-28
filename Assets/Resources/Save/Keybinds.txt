@@ -1,0 +1,9 @@
+Forward:W
+Backward:S
+Left:A
+Right:D
+Jump:Space
+Crouch:LeftControl
+Sprint:LeftShift
+Interact:E
+Inventory:Tab
