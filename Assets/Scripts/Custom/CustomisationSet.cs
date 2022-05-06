@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 //you will need to change Scenes
 using UnityEngine.SceneManagement;
 public class CustomisationSet : MonoBehaviour
@@ -29,7 +30,7 @@ public class CustomisationSet : MonoBehaviour
     [Header("Character Name")]
     //name of our character that the user is making
     public string characterName = "Adventurer";
-
+    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
     public Vector2 scr;
     #endregion
 
@@ -261,8 +262,23 @@ public class CustomisationSet : MonoBehaviour
 
     #region Save
     //Function called Save this will allow us to save our indexes to PlayerPrefs
-    //SetInt for SkinIndex, HairIndex, MouthIndex, EyesIndex
-    //SetString CharacterName
+    public void Save()
+    {
+        //SetInt for SkinIndex, HairIndex, MouthIndex, EyesIndex
+        //true = add to file, faalse = overwrite file
+        StreamWriter writer = new StreamWriter(path, false);
+        //write each of our keys to the file
+        writer.WriteLine("Skin" + ":" + skinIndex);
+        writer.WriteLine("Hair" + ":" + hairIndex);
+        writer.WriteLine("Mouth" + ":" + mouthIndex);
+        writer.WriteLine("Eyes" + ":" + eyesIndex);
+        writer.WriteLine("Clothes" + ":" + clothesIndex);
+        writer.WriteLine("Armour" + ":" + armourIndex);
+        //SetString CharacterName
+        writer.WriteLine("Name" + ":" + characterName);
+        //writing is done
+        writer.Close();
+    }
     #endregion
 
     #region OnGUI
@@ -413,6 +429,11 @@ public class CustomisationSet : MonoBehaviour
         i++;
         //GUI Button called Save and Play
         //this button will run the save function and also load into the game level
+        if (GUI.Button(new Rect(0.25f * scr.x, scr.y + i * (0.5f * scr.y), 2 * scr.x, 0.5f * scr.y), "Save and Play"))
+        {
+            Save();
+            SceneManager.LoadScene(2);
+        }
         #endregion
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class CustomisationGet : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class CustomisationGet : MonoBehaviour
     public int skinIndex;
     public int hairIndex, mouthIndex, eyesIndex, clothesIndex, armourIndex;
     public GameObject player;
+    public string playerName;
+    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
     // Start is called before the first frame update
     void Start()
     {
         characterRenderer = GetComponent<Renderer>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Warrior");
+        GetCustom();
         //load from save file
         Load();
     }
@@ -64,5 +68,46 @@ public class CustomisationGet : MonoBehaviour
         Material[] mats = characterRenderer.materials;
         mats[matIndex].mainTexture = tex;
         characterRenderer.materials = mats;
+    }
+    public void GetCustom()
+    {
+        //Read text from file
+        StreamReader reader = new StreamReader(path);
+        //reference to the line we are reading
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            string[] parts = line.Split(':');
+            switch (parts[0])
+            {
+                case "Skin":
+                    skinIndex = int.Parse(parts[1]);
+                    break;
+                case "Eyes":
+                    eyesIndex = int.Parse(parts[1]);
+                    break;
+                case "Mouth":
+                    mouthIndex = int.Parse(parts[1]);
+                    break;
+                case "Hair":
+                    hairIndex = int.Parse(parts[1]);
+                    break;
+                case "Clothes":
+                    clothesIndex = int.Parse(parts[1]);
+                    break;
+                case "Armour":
+                    armourIndex = int.Parse(parts[1]);
+                    break;
+                case "Name":
+                    playerName = parts[1];
+                    break;
+                default:
+                    Debug.Log("Error!");
+                    break;
+
+            }
+
+        }
+        reader.Close();
     }
 }

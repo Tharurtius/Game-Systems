@@ -1,0 +1,7 @@
+Skin:0
+Hair:0
+Mouth:0
+Eyes:0
+Clothes:0
+Armour:0
+Name:Adventurer

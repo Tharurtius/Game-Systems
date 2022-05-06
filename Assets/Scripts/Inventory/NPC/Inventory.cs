@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Inventory.NPC
+namespace Inventory.Shop
 {
     public class Inventory : MonoBehaviour
     {
