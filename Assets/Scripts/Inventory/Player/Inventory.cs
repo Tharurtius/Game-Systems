@@ -169,8 +169,9 @@ namespace Inventory.Player
             //empty - 4/0.75/3.5/7
             //icon - 4.25/1/3/3 selectedItem.Icon
             //name - 4.55/4/2.5/0.5 selectedItem.Name
-            GUI.Box(new Rect(4f * GameManager.scr.x, 0.75f * GameManager.scr.y, 3.5f * GameManager.scr.x, 7 * GameManager.scr.y), "");
-            GUI.Box(new Rect(4.25f * GameManager.scr.x, 1f* GameManager.scr.y, 3 * GameManager.scr.x, 3 * GameManager.scr.y), ))
+            GUI.Box(new Rect(4f * GameManager.scr.x, 0.75f * GameManager.scr.y, 3.5f * GameManager.scr.x, 7f * GameManager.scr.y), "");
+            GUI.Box(new Rect(4.25f * GameManager.scr.x, 1f * GameManager.scr.y, 3f * GameManager.scr.x, 3f * GameManager.scr.y), selectedItem.Icon);
+            GUI.Box(new Rect(4.55f * GameManager.scr.x, 4f * GameManager.scr.y, 2.5f * GameManager.scr.y, 0.5f * GameManager.scr.y), selectedItem.Name);
         }
         private void OnGUI()
         {
