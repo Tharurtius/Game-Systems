@@ -42,7 +42,10 @@ public class Interact : MonoBehaviour
                 //and that hits into is tagged
                 if (hitInfo.collider.CompareTag("Item"))
                 {
-                    Debug.Log("Item");
+                    if (hitInfo.collider.GetComponent<ItemHandler>())
+                    {
+                        hitInfo.collider.GetComponent<ItemHandler>().OnCollection();
+                    }
                 }
                 #endregion
                 #region Chest

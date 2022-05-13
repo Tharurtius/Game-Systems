@@ -100,5 +100,5 @@ public enum ItemTypes
     Potion,
     Scroll,
     Quest,
-    Misc,
+    Money,
 }
