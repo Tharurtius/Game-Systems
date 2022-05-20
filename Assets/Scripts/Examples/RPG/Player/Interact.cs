@@ -52,7 +52,12 @@ public class Interact : MonoBehaviour
                 //and that hits into is tagged
                 if (hitInfo.collider.tag == "Chest")
                 {
-                    Debug.Log("Chest");
+                    //put chest into variable for readability
+                    Inventory.Chest.Inventory chest = hitInfo.collider.GetComponent<Inventory.Chest.Inventory>();
+                    if (chest && !chest.showChest) //if pointing at chest and not showing inventory
+                    {
+                        chest.ShowInv();
+                    }
                 }
                 #endregion
             }

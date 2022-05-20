@@ -35,10 +35,10 @@ namespace Inventory.Player
         void Start()
         {
 #if UNITY_EDITOR 
-            //playerInv.Add(ItemData.CreateItem(0));
-            //playerInv.Add(ItemData.CreateItem(100));
-            //playerInv.Add(ItemData.CreateItem(200));
-            //playerInv.Add(ItemData.CreateItem(900));
+            playerInv.Add(ItemData.CreateItem(0));
+            playerInv.Add(ItemData.CreateItem(100));
+            playerInv.Add(ItemData.CreateItem(200));
+            playerInv.Add(ItemData.CreateItem(900));
 #endif
         }
 
@@ -46,13 +46,13 @@ namespace Inventory.Player
         void Update()
         {
 #if UNITY_EDITOR
-            //if (Input.GetKeyDown(KeyCode.KeypadPlus))
-            //{
-            //    playerInv.Add(ItemData.CreateItem(0));
-            //    playerInv.Add(ItemData.CreateItem(100));
-            //    playerInv.Add(ItemData.CreateItem(200));
-            //    playerInv.Add(ItemData.CreateItem(900));
-            //}
+            if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            {
+                playerInv.Add(ItemData.CreateItem(0));
+                playerInv.Add(ItemData.CreateItem(100));
+                playerInv.Add(ItemData.CreateItem(200));
+                playerInv.Add(ItemData.CreateItem(900));
+            }
 #endif
             //if inventory key is pressed
             if (Input.GetKeyDown(KeyBinds.keys["Inventory"]))
@@ -79,7 +79,6 @@ namespace Inventory.Player
                             selectedItem = playerInv[i];
                         }
                     }
-
                 }
                 else //more than 34 items
                 {

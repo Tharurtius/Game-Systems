@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour
     {
         GUI.Box(new Rect(GameManager.scr.x * (8f - 0.125f), GameManager.scr.y * (4.5f - 0.125f), GameManager.scr.x * 0.25f, GameManager.scr.y * 0.25f), "");
     }
+    static public Rect MakeRect(float x, float y, float l, float h)
+    {
+        Rect space = new Rect(x * GameManager.scr.x, y * GameManager.scr.y, l * GameManager.scr.x, h * GameManager.scr.y);
+        return space;
+    }
 }
 public enum GamePlayStates
 {
