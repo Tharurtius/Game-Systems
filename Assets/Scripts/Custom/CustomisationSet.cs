@@ -30,7 +30,7 @@ public class CustomisationSet : MonoBehaviour
     [Header("Character Name")]
     //name of our character that the user is making
     public string characterName = "Adventurer";
-    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
+    public string path = Path.Combine(Application.streamingAssetsPath, "Customization.txt");
     public Vector2 scr;
     #endregion
 

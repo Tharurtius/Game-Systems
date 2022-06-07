@@ -13,7 +13,7 @@ public class HandleTextFile
 {
     //at this file location
     //static string path = "Assets/Resources/Save/KeyBinds.txt";
-    static string path = Path.Combine(Application.streamingAssetsPath, "Save/Keybinds.txt");
+    static string path = Path.Combine(Application.streamingAssetsPath, "Keybinds.txt");
     //Unity Editor allows me to create a tool in my Menus
     [MenuItem("Tool/Save/Write File")]
     //This is public static behavious that we can call in our scripts

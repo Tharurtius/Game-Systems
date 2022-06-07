@@ -1,7 +1,7 @@
-Skin:2
-Hair:0
-Mouth:1
+Skin:3
+Hair:4
+Mouth:2
 Eyes:3
 Clothes:10
-Armour:4
+Armour:10
 Name:Adventurer
