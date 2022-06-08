@@ -12,8 +12,8 @@ using System.IO; //have access to characters from a byte stream
 public class HandleTextFile
 {
     //at this file location
-    //static string path = "Assets/Resources/Save/KeyBinds.txt";
-    static string path = Path.Combine(Application.streamingAssetsPath, "Keybinds.txt");
+    static string path2 = "Assets/StreamingAssets/Save/KeyBinds.txt";
+    static string path = Path.Combine(Application.streamingAssetsPath, "Save/Keybinds.txt");
     //Unity Editor allows me to create a tool in my Menus
     [MenuItem("Tool/Save/Write File")]
     //This is public static behavious that we can call in our scripts
@@ -30,7 +30,8 @@ public class HandleTextFile
         }
         //writing is done
         writer.Close();
-        AssetDatabase.ImportAsset(path);
+        //Re-import the file to update the reference in the editor
+        AssetDatabase.ImportAsset(path2);
         TextAsset asset = Resources.Load(path) as TextAsset;
     }
     [MenuItem("Tool/Save/Read File")]

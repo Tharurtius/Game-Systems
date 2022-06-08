@@ -34,6 +34,7 @@ namespace Inventory.Player
         // Start is called before the first frame update
         void Start()
         {
+            //for debugging
 #if UNITY_EDITOR 
             playerInv.Add(ItemData.CreateItem(0));
             playerInv.Add(ItemData.CreateItem(100));
@@ -45,6 +46,7 @@ namespace Inventory.Player
         // Update is called once per frame
         void Update()
         {
+            //for debugging
 #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
@@ -54,12 +56,21 @@ namespace Inventory.Player
                 playerInv.Add(ItemData.CreateItem(900));
             }
 #endif
-            //if inventory key is pressed
-            if (Input.GetKeyDown(KeyBinds.keys["Inventory"]))
+            //if inventory key is pressed and Gameplaystate = game or inventory is showing
+            if (Input.GetKeyDown(KeyBinds.keys["Inventory"]) && (GameManager.gamePlayStates == GamePlayStates.Game || showInv))
             {
                 //toggle both show inventory and game state
                 showInv = !showInv;//makes the value the opposite value
-                GameManager.gamePlayStates = showInv ? GamePlayStates.MenuPause : GamePlayStates.Game;
+                //GameManager.gamePlayStates = showInv ? GamePlayStates.MenuPause : GamePlayStates.Game;
+                //Uses GameManager static function
+                if (showInv)
+                {
+                    GameManager.PauseGame();
+                }
+                else
+                {
+                    GameManager.UnPauseGame();
+                }
             }
         }
         void Display()
@@ -167,7 +178,7 @@ namespace Inventory.Player
                 }
             }
         }
-
+        //use item button, use depends on item
         void UseItem()
         {
             //boxes

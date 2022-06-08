@@ -153,7 +153,16 @@ namespace Inventory.Chest
         public void ShowInv()
         {
             showChest = !showChest;
-            GameManager.gamePlayStates = showChest ? GamePlayStates.MenuPause : GamePlayStates.Game;
+            //GameManager.gamePlayStates = showChest ? GamePlayStates.MenuPause : GamePlayStates.Game;
+            //Uses GameManager static function
+            if (showChest)
+            {
+                GameManager.PauseGame();
+            }
+            else
+            {
+                GameManager.UnPauseGame();
+            }
         }
         #region Debug stuff
         //spawn shit

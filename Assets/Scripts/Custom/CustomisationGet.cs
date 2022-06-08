@@ -11,7 +11,7 @@ public class CustomisationGet : MonoBehaviour
     public int hairIndex, mouthIndex, eyesIndex, clothesIndex, armourIndex;
     public GameObject player;
     public string playerName;
-    public string path = Path.Combine(Application.streamingAssetsPath, "Customization.txt");
+    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
     // Start is called before the first frame update
     void Start()
     {
@@ -104,9 +104,7 @@ public class CustomisationGet : MonoBehaviour
                 default:
                     Debug.Log("Error!");
                     break;
-
             }
-
         }
         reader.Close();
     }

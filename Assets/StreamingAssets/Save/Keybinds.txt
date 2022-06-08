@@ -7,3 +7,4 @@ Crouch:C
 Interact:E
 Sprint:LeftShift
 Inventory:Tab
+Pause:P
