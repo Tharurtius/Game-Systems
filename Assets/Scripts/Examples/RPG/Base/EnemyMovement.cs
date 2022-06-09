@@ -46,15 +46,24 @@ public class EnemyMovement : GradientHealth
     public override void Update()
     {
         base.Update();
-        anim.SetBool("Walk", false);
-        anim.SetBool("Run", false);
-        anim.SetBool("Attack", false);
+        if (GameManager.gamePlayStates == GamePlayStates.Game)
+        {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Run", false);
+            anim.SetBool("Attack", false);
 
-        Patrol();
-        Seek();
-        Attack();
-        Die();
-        FaceTarget();
+            Patrol();
+            Seek();
+            Attack();
+            Die();
+            FaceTarget();
+            anim.speed = 1;
+        }
+        else
+        {
+            anim.speed = 0;
+        }
+
     }
     void FaceTarget()
     {
@@ -65,7 +74,7 @@ public class EnemyMovement : GradientHealth
     }
     void Patrol()
     {
-        if (waypoints.Length <= 0 || Vector3.Distance(player.position, transform.position)  <= sightRange || isDead)
+        if (waypoints.Length <= 0 || Vector3.Distance(player.position, transform.position) <= sightRange || isDead)
         {
             return;
         }
@@ -77,7 +86,7 @@ public class EnemyMovement : GradientHealth
         distanceToPoint = Vector3.Distance(transform.position, waypoints[curWaypoint].position);
         if (distanceToPoint <= changeWaypointWhenThisClose)
         {
-            if (curWaypoint < waypoints.Length-1)
+            if (curWaypoint < waypoints.Length - 1)
             {
                 curWaypoint++;
             }
@@ -89,7 +98,7 @@ public class EnemyMovement : GradientHealth
     }
     void Seek()
     {
-        if (Vector3.Distance(player.position, transform.position) > sightRange||Vector3.Distance(player.position, transform.position) < attackRange || isDead)
+        if (Vector3.Distance(player.position, transform.position) > sightRange || Vector3.Distance(player.position, transform.position) < attackRange || isDead)
         {
             return;
         }

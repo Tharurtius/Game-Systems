@@ -9,6 +9,7 @@ TagManager:
   - Chest
   - CheckPoint
   - Warrior
+  - Shop Counter
   layers:
   - Default
   - TransparentFX

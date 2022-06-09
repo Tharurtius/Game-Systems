@@ -1,0 +1,10 @@
+This file has something in it
+-43.2358
+-54.88813
+-1.927714
+False
+False
+False
+False
+0
+16

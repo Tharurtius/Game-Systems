@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     public static GamePlayStates gamePlayStates;
     public static Vector2 scr;
     public GameObject pauseMenu;
+    
+    //used to transfer values in between scenes
+    public static int loaded;//0 = no load, 1 = regular load, 2 = quick load
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,21 @@ public class GameManager : MonoBehaviour
         //gamePlayStates = GamePlayStates.Game;
         //unpause game just in case
         UnPauseGame();
+        //Debug.Log(loaded);
+        if (loaded != 0)
+        {
+            Save saveScript = gameObject.GetComponent<Save>();
+            if (loaded == 1)
+            {
+                saveScript.Load();
+            }
+            else//is 2
+            {
+                saveScript.QuickLoad();
+            }
+            //reset value
+            loaded = 0;
+        }
     }
 
     // Update is called once per frame
@@ -99,13 +117,13 @@ public class GameManager : MonoBehaviour
     static public void PauseGame()
     {
         gamePlayStates = GamePlayStates.MenuPause;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     //unpause game
     static public void UnPauseGame()
     {
         gamePlayStates = GamePlayStates.Game;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }
 public enum GamePlayStates

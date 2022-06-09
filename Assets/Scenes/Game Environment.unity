@@ -884,6 +884,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 570127613}
+        m_TargetAssemblyTypeName: Save, Assembly-CSharp
+        m_MethodName: QuickSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1056428087}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: QuitGame
@@ -2053,12 +2065,40 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 718849345}
     - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1056428090}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SaveOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: OptionHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193692700098684169, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4349035349319765816, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2252,6 +2292,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: qDropdown
+      value: 
+      objectReference: {fileID: 1056428091}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 1056428096}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: sfxToggle
+      value: 
+      objectReference: {fileID: 1056428093}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: fullToggle
+      value: 
+      objectReference: {fileID: 1056428092}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: musicSlider
+      value: 
+      objectReference: {fileID: 1056428097}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: musicToggle
+      value: 
+      objectReference: {fileID: 1056428094}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: masterSlider
+      value: 
+      objectReference: {fileID: 1056428098}
+    - target: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+      propertyPath: masterToggle
+      value: 
+      objectReference: {fileID: 1056428095}
     - target: {fileID: 6515264346443983433, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -2465,6 +2537,63 @@ GameObject:
 --- !u!224 &1056428089 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2488047124914723339, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1056428090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6146196133900807382, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bc509958365d44dbaf3735c72798c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1056428091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7195324390232251009, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1056428092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2816791870382922702, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8108364326708067244, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1054830790177459095, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7052096553619897553, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5924158420691554264, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8586463221879139243, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
+  m_PrefabInstance: {fileID: 1056428086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056428098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6880782018920163704, guid: ae5702ce1eb65df41aabb4d2010e3dfd, type: 3}
   m_PrefabInstance: {fileID: 1056428086}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085821723
@@ -3816,6 +3945,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 570127613}
+        m_TargetAssemblyTypeName: Save, Assembly-CSharp
+        m_MethodName: QuickSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1056428087}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -4555,27 +4696,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8239814874009497870, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_Name
-      value: Item
+      value: Shop Counter
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497870, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239814874009497870, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
+      propertyPath: m_TagString
+      value: Shop Counter
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.95
+      value: 4.73
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.31
+      value: 12.58
       objectReference: {fileID: 0}
     - target: {fileID: 8239814874009497874, guid: 30c0f5cfd3de28c4db186f559a84409a, type: 3}
       propertyPath: m_LocalRotation.w

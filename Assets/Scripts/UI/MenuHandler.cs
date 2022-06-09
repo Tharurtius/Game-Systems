@@ -23,4 +23,11 @@ public class MenuHandler : MonoBehaviour
         //Quits the application
         Application.Quit();
     }
+    //0 = no load, also default
+    //1 = regular load
+    //2 = quick load
+    public void setLoadValue(int value)
+    {
+        GameManager.loaded = value;
+    }
 }
