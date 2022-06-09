@@ -46,12 +46,12 @@ public class KeyBinds : MonoBehaviour
     public void SaveKeys()
     {
         //for each entry in our dictionary
-        //foreach (var key in keys)
-        //{
+        foreach (var key in keys)
+        {
         //playerprefs is our inbuilt way to save and load values from our registry editor
-        //PlayerPrefs.SetString(key.Key, key.Value.ToString());
-        //}
-        //PlayerPrefs.Save();
+        PlayerPrefs.SetString(key.Key, key.Value.ToString());
+        }
+        PlayerPrefs.Save();
         HandleTextFile.WriteSaveFile();
     }
     public void ChangeKey(GameObject clickedKey)
