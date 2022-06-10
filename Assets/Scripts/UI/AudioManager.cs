@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    private void Awake()
+    private void Awake()//singleton
     {
         DontDestroyOnLoad(this);
         if (instance != null && instance != this)

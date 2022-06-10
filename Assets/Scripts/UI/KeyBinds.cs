@@ -21,7 +21,7 @@ public class KeyBinds : MonoBehaviour
     void Start()
     {
         //forloop to add the keys to the dictionary on start, with the save or default data depending if we have save data
-        if (PlayerPrefs.HasKey("FirstLoad"))
+        if (!PlayerPrefs.HasKey("FirstLoad"))//check playerprefs for FirstLoad
         {
             for (int i = 0; i < baseSetup.Length; i++)
             {
@@ -41,19 +41,25 @@ public class KeyBinds : MonoBehaviour
         {
             baseSetup[i].keyDisplayText.text = keys[baseSetup[i].keyName].ToString();
         }
-        
+
     }
     public void SaveKeys()
     {
         //for each entry in our dictionary
         foreach (var key in keys)
         {
-        //playerprefs is our inbuilt way to save and load values from our registry editor
-        PlayerPrefs.SetString(key.Key, key.Value.ToString());
+            //playerprefs is our inbuilt way to save and load values from our registry editor
+            PlayerPrefs.SetString(key.Key, key.Value.ToString());
         }
         PlayerPrefs.Save();
         HandleTextFile.WriteSaveFile();
     }
+    //redundant
+    //public void LoadKeys()
+    //{
+        //load keys from playerprefs
+
+    //}
     public void ChangeKey(GameObject clickedKey)
     {
         currentKey = clickedKey;

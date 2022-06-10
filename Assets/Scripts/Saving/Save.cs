@@ -5,9 +5,10 @@ using System.IO;
 
 public class Save : MonoBehaviour
 {
-    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Save.txt");
-    public string quickPath = Path.Combine(Application.streamingAssetsPath, "Save/QuickSave.txt");
+    public string path = Path.Combine(Application.streamingAssetsPath, "Save/Save.txt");//path for regular save file
+    public string quickPath = Path.Combine(Application.streamingAssetsPath, "Save/QuickSave.txt");//path for autosave file
 
+    #region Save
     public void SaveGame()
     {
         //links writer to file
@@ -53,7 +54,8 @@ public class Save : MonoBehaviour
         //reading is done
         reader.Close();
     }
-
+    #endregion
+    #region Autosave
     public void QuickSave()
     {
         //links writer to file
@@ -99,4 +101,5 @@ public class Save : MonoBehaviour
         //reading is done
         reader.Close();
     }
+    #endregion
 }

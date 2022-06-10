@@ -1,7 +1,7 @@
-Skin:1
-Hair:4
+Skin:3
+Hair:1
 Mouth:2
-Eyes:3
-Clothes:9
-Armour:10
-Name:Adventurer
+Eyes:1
+Clothes:10
+Armour:4
+Name:Bob

@@ -3,8 +3,8 @@ Backward:S
 Left:A
 Right:D
 Jump:Space
-Crouch:C
-Interact:E
+Crouch:LeftControl
 Sprint:LeftShift
+Interact:E
 Inventory:Tab
 Pause:P

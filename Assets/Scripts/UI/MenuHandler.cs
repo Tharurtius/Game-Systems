@@ -26,7 +26,8 @@ public class MenuHandler : MonoBehaviour
     //0 = no load, also default
     //1 = regular load
     //2 = quick load
-    public void setLoadValue(int value)
+    //allows value to stay consistent between scenes
+    public void SetLoadValue(int value)
     {
         GameManager.loaded = value;
     }

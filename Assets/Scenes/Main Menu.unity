@@ -680,7 +680,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1791446702}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: setLoadValue
+        m_MethodName: SetLoadValue
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1818,7 +1818,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1791446702}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: setLoadValue
+        m_MethodName: SetLoadValue
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

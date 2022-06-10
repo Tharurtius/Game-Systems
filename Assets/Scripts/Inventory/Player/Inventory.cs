@@ -337,8 +337,8 @@ namespace Inventory.Player
         {
             if (showInv)
             {
-                GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Inventory");
-                for (int i = 0; i < enumTypesForItems.Length; i++)
+                GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Inventory");//inventory background
+                for (int i = 0; i < enumTypesForItems.Length; i++)//item category label and button
                 {
                     if (GUI.Button(new Rect(4f * GameManager.scr.x + i * GameManager.scr.x, GameManager.scr.y * 0.5f, GameManager.scr.x, 0.25f * GameManager.scr.y), enumTypesForItems[i]))
                     {
