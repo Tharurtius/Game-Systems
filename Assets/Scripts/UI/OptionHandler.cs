@@ -166,5 +166,10 @@ public class OptionHandler : MonoBehaviour
         //reading is done
         reader.Close();
     }
+    //just in case
+    private void Awake()
+    {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Options.txt");
+    }
     #endregion
 }

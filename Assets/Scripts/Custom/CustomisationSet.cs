@@ -34,6 +34,12 @@ public class CustomisationSet : MonoBehaviour
     public Vector2 scr;
     #endregion
 
+    //just in case
+    private void Awake()
+    {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
+    }
+
     #region Start
     //in start we need to set up the following
     private void Start()
@@ -201,7 +207,7 @@ public class CustomisationSet : MonoBehaviour
         {
             index = max - 1;
         }
-        if (index > max -1)
+        if (index > max - 1)
         {
             index = 0;
         }
@@ -264,6 +270,7 @@ public class CustomisationSet : MonoBehaviour
     //Function called Save this will allow us to save our indexes to PlayerPrefs
     public void Save()
     {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
         //SetInt for SkinIndex, HairIndex, MouthIndex, EyesIndex
         //true = add to file, faalse = overwrite file
         StreamWriter writer = new StreamWriter(path, false);
@@ -409,8 +416,8 @@ public class CustomisationSet : MonoBehaviour
             SetTexture("Clothes", Random.Range(-clothesMax, clothesMax));
             SetTexture("Armour", Random.Range(-armourMax, armourMax));
         }
-            //reset will set all to 0 both use SetTexture
-            if (GUI.Button(new Rect(1.25f * scr.x, scr.y + i * (0.5f * scr.y), scr.x, 0.5f * scr.y), "Reset"))
+        //reset will set all to 0 both use SetTexture
+        if (GUI.Button(new Rect(1.25f * scr.x, scr.y + i * (0.5f * scr.y), scr.x, 0.5f * scr.y), "Reset"))
         {
             SetTexture("Skin", skinMax);
             SetTexture("Hair", hairMax);

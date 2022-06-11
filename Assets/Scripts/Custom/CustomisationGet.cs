@@ -12,6 +12,12 @@ public class CustomisationGet : MonoBehaviour
     public GameObject player;
     public string playerName;
     public string path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
+
+    //just in case
+    private void Awake()
+    {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Customization.txt");
+    }
     // Start is called before the first frame update
     void Start()
     {

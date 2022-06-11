@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 public class Save : MonoBehaviour
 {
     public string path = Path.Combine(Application.streamingAssetsPath, "Save/Save.txt");//path for regular save file
     public string quickPath = Path.Combine(Application.streamingAssetsPath, "Save/QuickSave.txt");//path for autosave file
 
+    //just in case
+    private void Awake()
+    {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Save.txt");
+        quickPath = Path.Combine(Application.streamingAssetsPath, "Save/QuickSave.txt");
+}
     #region Save
     public void SaveGame()
     {
+        path = Path.Combine(Application.streamingAssetsPath, "Save/Save.txt");
         //links writer to file
         StreamWriter writer = new StreamWriter(path, false);//true = add, false = overwrite
         writer.WriteLine("This file has something in it");
@@ -58,6 +66,7 @@ public class Save : MonoBehaviour
     #region Autosave
     public void QuickSave()
     {
+        Path.Combine(Application.streamingAssetsPath, "Save/QuickSave.txt");
         //links writer to file
         StreamWriter writer = new StreamWriter(quickPath, false);//true = add, false = overwrite
         writer.WriteLine("This file has something in it");

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
             {
                 saveScript.Load();
             }
-            else//is 2
+            else if (loaded == 2)//is 2
             {
                 saveScript.QuickLoad();
             }
