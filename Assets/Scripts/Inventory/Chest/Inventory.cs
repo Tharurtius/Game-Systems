@@ -120,7 +120,7 @@ namespace Inventory.Chest
                 GUI.Box(GameManager.MakeRect(4.55f, 4f, 2.5f, 0.5f), selectedItemPlayer.Name);
             }
             string itemDescription;
-            if (selectedItemPlayer.Amount < 0)
+            if (selectedItemPlayer.Amount > 0)
             {
                 itemDescription = selectedItemPlayer.Description + "\nValue: " + selectedItemPlayer.Value + "\nAmount: " + selectedItemPlayer.Amount;
             }
@@ -129,6 +129,54 @@ namespace Inventory.Chest
                 itemDescription = selectedItemPlayer.Description + "\nValue: " + selectedItemPlayer.Value;
             }
             GUI.Box(GameManager.MakeRect(4.25f, 4.5f, 3f, 3f), itemDescription);
+
+            //item give
+            if (GUI.Button(GameManager.MakeRect(5.25f, 7.25f, 1, 0.25f), "Give"))
+            {
+                bool found = false;
+                int addindex = 0;
+                Item target;
+                //if item is stackable
+                if (selectedItemPlayer.Amount > 0)
+                {
+                    //find item in chest
+                    for (int i = 0; i < chestInv.Count; i++)
+                    {
+                        target = chestInv[i];
+                        if (selectedItemPlayer.Id == target.Id)
+                        {
+                            found = true;
+                            addindex = i;
+                            break;
+                        }
+                    }
+                    //if found
+                    if (found)
+                    {
+                        chestInv[addindex].Amount++;
+                    }
+                    else//add item
+                    {
+                        chestInv.Add(ItemData.CreateItem(selectedItemPlayer.Id));
+                    }
+                }
+                //if item isnt stackable
+                else
+                {
+                    chestInv.Add(ItemData.CreateItem(selectedItemPlayer.Id));
+                }
+                //remove from players end
+                if (selectedItemPlayer.Amount > 1)
+                {
+                    selectedItemPlayer.Amount--;
+                }
+                else
+                {
+                    Player.Inventory.playerInv.Remove(selectedItemPlayer);
+                    selectedItemPlayer = null;
+                    return;
+                }
+            }
         }
         void ChestItem()
         {
@@ -140,7 +188,7 @@ namespace Inventory.Chest
                 GUI.Box(GameManager.MakeRect(9.3f, 4f, 2.5f, 0.5f), selectedItemChest.Name);
             }
             string itemDescription;
-            if (selectedItemChest.Amount < 0)
+            if (selectedItemChest.Amount > 0)
             {
                 itemDescription = selectedItemChest.Description + "\nValue: " + selectedItemChest.Value + "\nAmount: " + selectedItemChest.Amount;
             }
@@ -149,6 +197,53 @@ namespace Inventory.Chest
                 itemDescription = selectedItemChest.Description + "\nValue: " + selectedItemChest.Value;
             }
             GUI.Box(GameManager.MakeRect(9f, 4.5f, 3f, 3f), itemDescription);
+            //item take
+            if (GUI.Button(GameManager.MakeRect(10f, 7.25f, 1, 0.25f), "Take"))
+            {
+                bool found = false;
+                int addindex = 0;
+                Item target;
+                //if item is stackable
+                if (selectedItemChest.Amount > 0)
+                {
+                    //find item in player
+                    for (int i = 0; i < Player.Inventory.playerInv.Count; i++)
+                    {
+                        target = Player.Inventory.playerInv[i];
+                        if (selectedItemChest.Id == target.Id)
+                        {
+                            found = true;
+                            addindex = i;
+                            break;
+                        }
+                    }
+                    //if found
+                    if (found)
+                    {
+                        Player.Inventory.playerInv[addindex].Amount++;
+                    }
+                    else//add item
+                    {
+                        Player.Inventory.playerInv.Add(ItemData.CreateItem(selectedItemChest.Id));
+                    }
+                }
+                //if item isnt stackable
+                else
+                {
+                    Player.Inventory.playerInv.Add(ItemData.CreateItem(selectedItemChest.Id));
+                }
+                //remove from players end
+                if (selectedItemChest.Amount > 1)
+                {
+                    selectedItemChest.Amount--;
+                }
+                else
+                {
+                    chestInv.Remove(selectedItemChest);
+                    selectedItemChest = null;
+                    return;
+                }
+            }
         }
         public void ShowInv()
         {

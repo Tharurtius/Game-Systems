@@ -1,5 +1,6 @@
 using System.Collections.Generic; //lists and dictionaries
 using UnityEngine;
+using UnityEngine.UI;
 namespace Inventory.Player
 {
     public class Inventory : MonoBehaviour
@@ -10,6 +11,7 @@ namespace Inventory.Player
         public Item selectedItem;
         public static bool showInv;
         public static int money;
+        public GameObject moneyCounter;
 
         //Scrolling and Sorting
         public Vector2 scrollPos;
@@ -46,6 +48,8 @@ namespace Inventory.Player
         // Update is called once per frame
         void Update()
         {
+            //money display
+            moneyCounter.GetComponent<Text>().text = "$" + money;
             //for debugging
 #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
