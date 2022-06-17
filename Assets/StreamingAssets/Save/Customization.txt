@@ -1,5 +1,5 @@
-Skin:3
-Hair:0
+Skin:0
+Hair:1
 Mouth:0
 Eyes:0
 Clothes:0

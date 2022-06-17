@@ -60,6 +60,17 @@ public class Interact : MonoBehaviour
                     }
                 }
                 #endregion
+                #region Shop
+                if (hitInfo.collider.tag == "Shop Counter")
+                {
+                    //put chest into variable for readability
+                    Inventory.Shop.Inventory shop = hitInfo.collider.GetComponent<Inventory.Shop.Inventory>();
+                    if (shop && !shop.showShop) //if pointing at chest and not showing inventory
+                    {
+                        shop.ShowInv();
+                    }
+                }
+                #endregion
             }
         }
     }

@@ -161,7 +161,7 @@ public class OptionHandler : MonoBehaviour
         qDropdown.value = int.Parse(reader.ReadLine());
         Quality(qDropdown.value);
         resDropdown.value = int.Parse(reader.ReadLine());
-        SetResolution(qDropdown.value);
+        SetResolution(resDropdown.value);
 
         //reading is done
         reader.Close();

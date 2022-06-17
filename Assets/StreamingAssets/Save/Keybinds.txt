@@ -1,6 +1,6 @@
 Forward:W
-Backward:S
-Left:A
+Backward:A
+Left:S
 Right:D
 Jump:Space
 Crouch:LeftControl

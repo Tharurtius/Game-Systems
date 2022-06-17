@@ -1,10 +1,10 @@
 This file has something in it
 -51.66267
--34.6307
+-24.6307
 -28.09357
 False
 False
 True
 True
 0
-23
+16
